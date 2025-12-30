@@ -2,13 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My Cloud Website</title>
+    <title>Aesthetic Cloud UI</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- NAVBAR -->
     <nav>
-        <h2>MyWebsite</h2>
+        <h2>CloudUI</h2>
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -16,41 +21,59 @@
         </ul>
     </nav>
 
+    <!-- HERO SECTION -->
     <section class="hero" id="home">
-        <h1>Welcome to My Cloud Website ☁️</h1>
-        <p>Designed with HTML & CSS | Deployed on GitHub Pages</p>
-        <button>Explore More</button>
+        <div class="hero-content">
+            <h1>Design. Deploy. Inspire.</h1>
+            <p>A modern UI website deployed on the cloud</p>
+            <button onclick="scrollToFeatures()">Explore Features</button>
+        </div>
     </section>
 
+    <!-- ABOUT SECTION -->
     <section class="about" id="about">
         <h2>About This Website</h2>
         <p>
-            This website is created using HTML and CSS and deployed on cloud using GitHub Pages.
-            It has modern design, animations, and responsive layout.
+            This website is developed using HTML and CSS with a modern aesthetic UI.
+            It is deployed on cloud using GitHub Pages.
         </p>
     </section>
 
+    <!-- FEATURES SECTION -->
     <section class="features" id="features">
-        <h2>Features</h2>
+        <h2>Our Features</h2>
+
         <div class="card-container">
             <div class="card">
-                <h3>🎨 Modern Design</h3>
-                <p>Gradient colors and clean layout</p>
+                <h3>✨ Aesthetic UI</h3>
+                <p>Glassmorphism design with modern fonts</p>
             </div>
+
             <div class="card">
-                <h3>⚡ Fast</h3>
-                <p>Lightweight and loads quickly</p>
+                <h3>🎨 Vibrant Colors</h3>
+                <p>Beautiful gradients and smooth transitions</p>
             </div>
+
             <div class="card">
-                <h3>☁️ Cloud Hosted</h3>
+                <h3>☁ Cloud Hosted</h3>
                 <p>Deployed using GitHub Pages</p>
             </div>
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer>
-        <p>© 2025 | Created by Student | Cloud Computing Lab</p>
+        <p>© 2025 | Cloud Computing Lab Project</p>
     </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        function scrollToFeatures() {
+            document.getElementById("features").scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+    </script>
 
 </body>
 </html>
