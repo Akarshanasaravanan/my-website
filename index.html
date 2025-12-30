@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>NeoUI Cloud</title>
+    <title>NeoCloud Advanced UI</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -13,51 +13,46 @@
         <span></span>
         <span></span>
         <span></span>
+        <span></span>
     </div>
 
     <!-- Navbar -->
     <header>
-        <h2>NeoUI</h2>
+        <h2>NeoCloud</h2>
         <nav>
             <a href="#home">Home</a>
+            <a href="#about">About</a>
             <a href="#features">Features</a>
             <a href="#contact">Contact</a>
         </nav>
+        <div class="menu-toggle">&#9776;</div>
     </header>
 
-    <!-- Hero -->
+    <!-- Hero Section -->
     <section class="hero" id="home">
-        <h1>Build. Design. Deploy.</h1>
-        <p>A futuristic cloud UI built with pure HTML & CSS</p>
-        <button onclick="showFeatures()">View Features</button>
+        <h1>Build <span class="animated-text">Fast</span>, Design <span class="animated-text">Modern</span>, Deploy <span class="animated-text">Cloud</span></h1>
+        <p>Next-gen cloud UI website fully responsive and interactive</p>
+        <button onclick="scrollToSection('features')">Explore Features</button>
     </section>
 
-    <!-- Features -->
-    <section class="features hidden" id="features">
-        <div class="feature-card" onclick="showDetail('UI Design')">
-            🎨 UI Design
-        </div>
-        <div class="feature-card" onclick="showDetail('Fast Hosting')">
-            ⚡ Fast Hosting
-        </div>
-        <div class="feature-card" onclick="showDetail('Cloud Ready')">
-            ☁ Cloud Ready
-        </div>
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2>About NeoCloud</h2>
+        <p>This project demonstrates advanced UI concepts using HTML, CSS, and JavaScript with modern design techniques like glassmorphism, animations, and smooth scroll. Perfect for cloud-hosted projects.</p>
     </section>
 
-    <!-- Feature Detail -->
-    <div class="detail hidden" id="detailBox">
-        <p id="detailText"></p>
-        <button onclick="closeDetail()">Close</button>
-    </div>
-
-    <!-- Footer -->
-    <footer id="contact">
-        <p>© 2025 | Cloud Computing Project</p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
-
-
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <h2>Features</h2>
+        <div class="card-container">
+            <div class="card" onclick="showDetail('Ultra Fast Hosting')">
+                ⚡ Ultra Fast Hosting
+            </div>
+            <div class="card" onclick="showDetail('Responsive Design')">
+                📱 Responsive Design
+            </div>
+            <div class="card" onclick="showDetail('Glass UI Elements')">
+                ✨ Glass UI Elements
+            </div>
+            <div class="card" onclick="showDetail('Cloud Ready')">
+                ☁ Cloud
