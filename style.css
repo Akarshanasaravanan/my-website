@@ -5,54 +5,73 @@
     font-family: 'Inter', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    color: white;
     background: #0f1020;
+    color: white;
     overflow-x: hidden;
 }
 
-/* Animated Background */
+/* Animated background blobs */
 .bg span {
     position: absolute;
     width: 400px;
     height: 400px;
-    background: linear-gradient(135deg, #ff00cc, #3333ff);
     border-radius: 50%;
-    filter: blur(120px);
-    animation: float 10s infinite alternate;
+    background: linear-gradient(135deg, #ff4ecd, #7b2ff7);
+    filter: blur(150px);
+    animation: float 12s infinite alternate;
 }
 
-.bg span:nth-child(1) { top: 10%; left: 10%; }
-.bg span:nth-child(2) { top: 50%; left: 60%; animation-delay: 3s; }
-.bg span:nth-child(3) { top: 70%; left: 20%; animation-delay: 6s; }
+.bg span:nth-child(1){ top:10%; left:10%; }
+.bg span:nth-child(2){ top:50%; left:60%; animation-delay:3s; }
+.bg span:nth-child(3){ top:70%; left:20%; animation-delay:6s; }
+.bg span:nth-child(4){ top:30%; left:80%; animation-delay:9s; }
 
 @keyframes float {
     from { transform: translateY(0); }
     to { transform: translateY(-80px); }
 }
 
-/* Header */
+/* Navbar */
 header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 20px 50px;
     position: fixed;
     width: 100%;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
+    background: rgba(0,0,0,0.4);
+    z-index: 1000;
+}
+
+header h2 {
+    font-size: 1.8rem;
 }
 
 header nav a {
     margin-left: 25px;
-    color: white;
     text-decoration: none;
+    color: white;
     opacity: 0.8;
+    transition: 0.3s;
 }
 
 header nav a:hover {
     opacity: 1;
+    color: #ff7ad9;
 }
 
-/* Hero */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+/* Hero Section */
 .hero {
     height: 100vh;
     display: flex;
@@ -60,14 +79,25 @@ header nav a:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding: 0 20px;
 }
 
 .hero h1 {
-    font-size: 3.8rem;
+    font-size: 3.5rem;
+}
+
+.animated-text {
+    color: #ff4ecd;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
 }
 
 .hero p {
-    margin: 15px 0;
+    margin: 20px 0;
     opacity: 0.8;
 }
 
@@ -78,28 +108,52 @@ header nav a:hover {
     background: #ffffff;
     color: #111;
     cursor: pointer;
+    transition: 0.3s;
 }
+
+.hero button:hover {
+    transform: scale(1.05);
+}
+
+/* About */
+.about {
+    padding: 100px 50px;
+    text-align: center;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(15px);
+}
+
+.about h2 { margin-bottom: 20px; font-size: 2.5rem; }
 
 /* Features */
 .features {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    padding: 100px 0;
+    padding: 100px 50px;
+    text-align: center;
 }
 
-.feature-card {
+.features h2 {
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.card {
     width: 220px;
     padding: 40px;
-    text-align: center;
-    border-radius: 15px;
+    border-radius: 20px;
     background: rgba(255,255,255,0.1);
     backdrop-filter: blur(10px);
     cursor: pointer;
     transition: 0.4s;
 }
 
-.feature-card:hover {
+.card:hover {
     transform: translateY(-15px) scale(1.05);
 }
 
@@ -109,26 +163,31 @@ header nav a:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(0,0,0,0.8);
+    background: rgba(0,0,0,0.85);
     padding: 40px;
     border-radius: 20px;
     text-align: center;
+    z-index: 2000;
 }
 
 .detail button {
     margin-top: 20px;
-    padding: 8px 20px;
+    padding: 10px 25px;
 }
 
 /* Footer */
 footer {
+    padding: 50px;
     text-align: center;
-    padding: 20px;
-    opacity: 0.6;
+    opacity: 0.7;
 }
 
 /* Utility */
-.hidden {
-    display: none;
-}
+.hidden { display: none; }
 
+/* Responsive */
+@media screen and (max-width: 768px){
+    .card-container { flex-direction: column; align-items: center; }
+    header nav { display: none; }
+    .menu-toggle { display: block; color:white; font-size:1.8rem; }
+}
