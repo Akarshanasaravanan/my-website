@@ -2,79 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Aesthetic Cloud UI</title>
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
+    <title>NeoUI Cloud</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- NAVBAR -->
-    <nav>
-        <h2>CloudUI</h2>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#features">Features</a></li>
-        </ul>
-    </nav>
+    <!-- Animated Background -->
+    <div class="bg">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 
-    <!-- HERO SECTION -->
+    <!-- Navbar -->
+    <header>
+        <h2>NeoUI</h2>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#features">Features</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
     <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Design. Deploy. Inspire.</h1>
-            <p>A modern UI website deployed on the cloud</p>
-            <button onclick="scrollToFeatures()">Explore Features</button>
+        <h1>Build. Design. Deploy.</h1>
+        <p>A futuristic cloud UI built with pure HTML & CSS</p>
+        <button onclick="showFeatures()">View Features</button>
+    </section>
+
+    <!-- Features -->
+    <section class="features hidden" id="features">
+        <div class="feature-card" onclick="showDetail('UI Design')">
+            🎨 UI Design
+        </div>
+        <div class="feature-card" onclick="showDetail('Fast Hosting')">
+            ⚡ Fast Hosting
+        </div>
+        <div class="feature-card" onclick="showDetail('Cloud Ready')">
+            ☁ Cloud Ready
         </div>
     </section>
 
-    <!-- ABOUT SECTION -->
-    <section class="about" id="about">
-        <h2>About This Website</h2>
-        <p>
-            This website is developed using HTML and CSS with a modern aesthetic UI.
-            It is deployed on cloud using GitHub Pages.
-        </p>
-    </section>
+    <!-- Feature Detail -->
+    <div class="detail hidden" id="detailBox">
+        <p id="detailText"></p>
+        <button onclick="closeDetail()">Close</button>
+    </div>
 
-    <!-- FEATURES SECTION -->
-    <section class="features" id="features">
-        <h2>Our Features</h2>
-
-        <div class="card-container">
-            <div class="card">
-                <h3>✨ Aesthetic UI</h3>
-                <p>Glassmorphism design with modern fonts</p>
-            </div>
-
-            <div class="card">
-                <h3>🎨 Vibrant Colors</h3>
-                <p>Beautiful gradients and smooth transitions</p>
-            </div>
-
-            <div class="card">
-                <h3>☁ Cloud Hosted</h3>
-                <p>Deployed using GitHub Pages</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <p>© 2025 | Cloud Computing Lab Project</p>
+    <!-- Footer -->
+    <footer id="contact">
+        <p>© 2025 | Cloud Computing Project</p>
     </footer>
 
-    <!-- JAVASCRIPT -->
-    <script>
-        function scrollToFeatures() {
-            document.getElementById("features").scrollIntoView({
-                behavior: "smooth"
-            });
-        }
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
+
 
